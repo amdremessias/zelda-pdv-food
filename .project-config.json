@@ -1,0 +1,34 @@
+{
+  "build_command": "pnpm run build",
+  "capabilities": [],
+  "dev_command": "pnpm run dev",
+  "env_vars": {},
+  "experiments": null,
+  "git_remote": {
+    "repo_url": "https://7f0548f6b28a1758d9bf7be630d36cb4.artifacts.cloudflare.net/git/prod/f3nMinDXH2frf35PrSVxQw.git",
+    "expiration": "2026-08-13T03:51:03.967Z",
+    "token": "art_v1_1a712576c277724c314ce4d793e801c3a00ef300?expires=1786593063",
+    "backend": "GIT_BACKEND_ARTIFACTS"
+  },
+  "name": "zelda-pdv-food",
+  "path": "/home/ubuntu/zelda-pdv-food",
+  "port": 3000,
+  "secrets": {
+    "BUILT_IN_FORGE_API_KEY": "57WUDKfGQwrbXJ9nCv4KXr",
+    "BUILT_IN_FORGE_API_URL": "https://forge.manus.ai",
+    "JWT_SECRET": "CUwXX4YBshBmk3kb2NPRwD",
+    "OAUTH_SERVER_URL": "https://api.manus.im",
+    "OWNER_NAME": "André Messias",
+    "OWNER_OPEN_ID": "8UJFq3r9G8usnmXL4RDRAo",
+    "VITE_ANALYTICS_ENDPOINT": "https://manus-analytics.com",
+    "VITE_ANALYTICS_WEBSITE_ID": "082624ae-c218-472c-b55b-ec37cc56a496",
+    "VITE_APP_ID": "f3nMinDXH2frf35PrSVxQw",
+    "VITE_APP_LOGO": "",
+    "VITE_APP_TITLE": "Zelda PDV Food — Sistema de Gestão para Food Service",
+    "VITE_FRONTEND_FORGE_API_KEY": "cffNewoFAdiyJJGs7CvvNw",
+    "VITE_FRONTEND_FORGE_API_URL": "https://forge.manus.ai",
+    "VITE_OAUTH_PORTAL_URL": "https://manus.im"
+  },
+  "template_id": "web-static",
+  "test_command": "pnpm test"
+}
