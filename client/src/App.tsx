@@ -18,6 +18,11 @@ function Router() {
       <Route path={"/termos-de-uso"} component={TermsOfUse} />
       <Route path={"/politica-de-cookies"} component={CookiePolicy} />
       <Route path={"/direitos-do-titular"} component={DataRights} />
+      {/* Aliases legados: preservam links de versões anteriores já indexadas ou publicadas. */}
+      <Route path={"/privacidade.html"} component={PrivacyPolicy} />
+      <Route path={"/termos.html"} component={TermsOfUse} />
+      <Route path={"/cookiesone.html"} component={CookiePolicy} />
+      <Route path={"/titulares.html"} component={DataRights} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>
