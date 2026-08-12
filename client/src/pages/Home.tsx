@@ -32,11 +32,14 @@ import {
   Zap,
 } from "lucide-react";
 
-const HERO_IMAGE = "/manus-storage/zelda-hero-food-service_feacd660.jpg";
-const WORKFLOW_IMAGE = "/manus-storage/zelda-ops-workflow_efb7a1d8.jpg";
-const DASHBOARD_IMAGE = "/manus-storage/zelda-dashboard-mockup_2e79f1df.jpg";
-const MARK_IMAGE = "/manus-storage/zelda-mark_eb8785ec.png";
+const HERO_IMAGE = "/assets/zelda-hero-food-service.jpg";
+const WORKFLOW_IMAGE = "/assets/zelda-ops-workflow.jpg";
+const DASHBOARD_IMAGE = "/assets/zelda-dashboard-mockup.jpg";
+const MARK_IMAGE = "/assets/zelda-mark.png";
 const CONTACT_EMAIL = "messias.consultoria@yahoo.com";
+const CONTACT_WHATSAPP = "5514997135218";
+const WHATSAPP_MESSAGE = encodeURIComponent("Olá! Quero conhecer o Zelda PDV Food.");
+const WHATSAPP_URL = `https://wa.me/${CONTACT_WHATSAPP}?text=${WHATSAPP_MESSAGE}`;
 
 const scrollToId = (id: string) => {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -120,7 +123,7 @@ const faqs = [
     question: "Como solicito uma demonstração?",
     answer: (
       <>
-        Você pode enviar uma mensagem para <a className="inline-link" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> e contar um pouco sobre a sua operação. A equipe retorna para combinar o próximo passo.
+        Você pode enviar uma mensagem pelo <a className="inline-link" href={WHATSAPP_URL}>WhatsApp</a> e contar um pouco sobre a sua operação. A equipe retorna para combinar o próximo passo.
       </>
     ),
   },
@@ -198,7 +201,7 @@ export default function Home() {
             {navItems.map((item) => (
               <a key={item.id} href={`#${item.id}`} onClick={() => setMenuOpen(false)}>{item.label}</a>
             ))}
-            <a className="nav-cta" href={`mailto:${CONTACT_EMAIL}?subject=Quero conhecer o Zelda PDV Food`} onClick={() => setMenuOpen(false)}>
+            <a className="nav-cta" href={WHATSAPP_URL} onClick={() => setMenuOpen(false)}>
               falar com a equipe <ArrowUpRight size={15} />
             </a>
           </nav>
@@ -220,7 +223,7 @@ export default function Home() {
               <h1 id="hero-title">Seu balcão no ritmo. <em>Sua gestão no controle.</em></h1>
               <p className="hero-lead">O Zelda PDV Food conecta venda, atendimento, estoque e decisão em uma operação mais clara para quem vive o movimento do seu negócio.</p>
               <div className="hero-actions">
-                <a className="button button-lime" href={`mailto:${CONTACT_EMAIL}?subject=Solicitar demonstração do Zelda PDV Food`}>solicitar demonstração <ArrowUpRight size={17} /></a>
+                <a className="button button-lime" href={WHATSAPP_URL}>solicitar demonstração <ArrowUpRight size={17} /></a>
                 <button className="text-action" type="button" onClick={() => scrollToId("visao-geral")}>entender a proposta <ArrowDownRight size={17} /></button>
               </div>
               <div className="hero-note"><span className="note-dot" /> para bares, restaurantes, lanchonetes, adegas e tabacarias</div>
@@ -280,13 +283,13 @@ export default function Home() {
           <div className="workflow-image-wrap"><img src={WORKFLOW_IMAGE} alt="Mesa de operação com tablet, pedido e itens de um serviço de alimentação" /><div className="image-tag">Z/ fluxo visível</div></div>
           <div className="workflow-copy"><SectionLabel index="Z/04">do pedido ao fechamento</SectionLabel><h2>Uma linha de operação que <span>não se perde.</span></h2><p>Quando cada etapa está visível, a equipe ganha tempo para atender melhor e a gestão ganha contexto para agir. O Zelda acompanha o pedido sem transformar a rotina em um painel impossível de ler.</p>
             <ol className="flow-list"><li><span>01</span><div><strong>registrar</strong><small>o pedido entra com rapidez e clareza</small></div></li><li><span>02</span><div><strong>preparar</strong><small>a equipe acompanha o próximo passo</small></div></li><li><span>03</span><div><strong>fechar</strong><small>pagamento e resumo ficam organizados</small></div></li></ol>
-            <a className="outline-action" href={`mailto:${CONTACT_EMAIL}?subject=Quero entender o fluxo do Zelda`}>conversar sobre meu fluxo <ArrowUpRight size={16} /></a>
+            <a className="outline-action" href={WHATSAPP_URL}>conversar sobre meu fluxo <ArrowUpRight size={16} /></a>
           </div>
         </section>
 
         <section className="dashboard-section dark-section">
           <div className="page-width dashboard-grid">
-            <div className="dashboard-copy"><SectionLabel index="Z/05" light>visão que ajuda a decidir</SectionLabel><h2>O dia termina melhor quando os dados <em>fazem sentido.</em></h2><p>Tenha uma leitura mais organizada de vendas, produtos, fluxo de caixa e itens que merecem atenção. Relatórios são úteis quando ajudam a escolher o próximo movimento.</p><div className="dashboard-points"><span><BarChart3 size={17} /> leitura de vendas</span><span><WalletCards size={17} /> fluxo de caixa</span><span><ClipboardList size={17} /> produtos em destaque</span></div><a className="button button-lime" href={`mailto:${CONTACT_EMAIL}?subject=Solicitar apresentação dos relatórios`}>ver a visão gerencial <ArrowUpRight size={17} /></a></div>
+            <div className="dashboard-copy"><SectionLabel index="Z/05" light>visão que ajuda a decidir</SectionLabel><h2>O dia termina melhor quando os dados <em>fazem sentido.</em></h2><p>Tenha uma leitura mais organizada de vendas, produtos, fluxo de caixa e itens que merecem atenção. Relatórios são úteis quando ajudam a escolher o próximo movimento.</p><div className="dashboard-points"><span><BarChart3 size={17} /> leitura de vendas</span><span><WalletCards size={17} /> fluxo de caixa</span><span><ClipboardList size={17} /> produtos em destaque</span></div><a className="button button-lime" href={WHATSAPP_URL}>ver a visão gerencial <ArrowUpRight size={17} /></a></div>
             <div className="dashboard-visual"><div className="dashboard-frame"><img src={DASHBOARD_IMAGE} alt="Prévia visual de um painel gerencial para food service" /></div><span className="dashboard-note note-one">vendas por período</span><span className="dashboard-note note-two">status atualizado</span></div>
           </div>
         </section>
@@ -297,15 +300,15 @@ export default function Home() {
         </section>
 
         <section className="support-section">
-          <div className="page-width support-grid"><div className="support-label"><SectionLabel index="Z/07" light>comece com contexto</SectionLabel><span className="support-mark">Z/</span></div><div className="support-copy"><h2>Implantar é mais simples quando alguém entende <em>o seu balcão.</em></h2><p>A conversa começa pelo seu cenário: como você vende, como organiza a equipe e onde hoje existe retrabalho. A MC Infra TI orienta o próximo passo com uma visão prática de implantação e suporte.</p><div className="support-list"><span><ShieldCheck size={18} /> segurança e permissões por operador</span><span><MessageCircle size={18} /> atendimento técnico para a sua rotina</span><span><Sparkles size={18} /> evolução guiada pela operação</span></div><a className="button button-dark" href={`mailto:${CONTACT_EMAIL}?subject=Quero falar sobre implantação`}>falar com a MC Infra TI <ArrowUpRight size={17} /></a></div></div>
+          <div className="page-width support-grid"><div className="support-label"><SectionLabel index="Z/07" light>comece com contexto</SectionLabel><span className="support-mark">Z/</span></div><div className="support-copy"><h2>Implantar é mais simples quando alguém entende <em>o seu balcão.</em></h2><p>A conversa começa pelo seu cenário: como você vende, como organiza a equipe e onde hoje existe retrabalho. A MC Infra TI orienta o próximo passo com uma visão prática de implantação e suporte.</p><div className="support-list"><span><ShieldCheck size={18} /> segurança e permissões por operador</span><span><MessageCircle size={18} /> atendimento técnico para a sua rotina</span><span><Sparkles size={18} /> evolução guiada pela operação</span></div><a className="button button-dark" href={WHATSAPP_URL}>falar com a MC Infra TI <ArrowUpRight size={17} /></a></div></div>
         </section>
 
-        <section className="faq-section page-width" id="faq"><div className="faq-intro"><SectionLabel index="Z/08">perguntas de operação</SectionLabel><h2>Antes de começar,<br /><span>vamos simplificar.</span></h2><p>Se sua dúvida não estiver aqui, envie uma mensagem. A melhor resposta depende do seu fluxo.</p><a className="inline-link" href={`mailto:${CONTACT_EMAIL}`}>enviar outra pergunta <ArrowUpRight size={15} /></a></div><div className="faq-list">{faqs.map((faq, index) => { const isOpen = openFaq === index; return <div className={`faq-item ${isOpen ? "is-open" : ""}`} key={faq.question}><button type="button" aria-expanded={isOpen} onClick={() => setOpenFaq(isOpen ? -1 : index)}><span>0{index + 1}</span><strong>{faq.question}</strong><ChevronDown size={19} /></button><div className="faq-answer"><p>{faq.answer}</p></div></div>; })}</div></section>
+        <section className="faq-section page-width" id="faq"><div className="faq-intro"><SectionLabel index="Z/08">perguntas de operação</SectionLabel><h2>Antes de começar,<br /><span>vamos simplificar.</span></h2><p>Se sua dúvida não estiver aqui, envie uma mensagem. A melhor resposta depende do seu fluxo.</p><a className="inline-link" href={WHATSAPP_URL}>falar pelo WhatsApp <ArrowUpRight size={15} /></a></div><div className="faq-list">{faqs.map((faq, index) => { const isOpen = openFaq === index; return <div className={`faq-item ${isOpen ? "is-open" : ""}`} key={faq.question}><button type="button" aria-expanded={isOpen} onClick={() => setOpenFaq(isOpen ? -1 : index)}><span>0{index + 1}</span><strong>{faq.question}</strong><ChevronDown size={19} /></button><div className="faq-answer"><p>{faq.answer}</p></div></div>; })}</div></section>
 
-        <section className="final-cta dark-section"><div className="page-width final-cta-inner"><div className="cta-sticker">Z/ próximo passo</div><SectionLabel index="Z/09" light>quando o caixa pede mais clareza</SectionLabel><h2>Seu próximo turno pode começar<br /><em>mais organizado.</em></h2><p>Conte para a MC Infra TI como o seu negócio funciona. A gente mostra onde o Zelda PDV Food pode entrar.</p><a className="button button-lime" href={`mailto:${CONTACT_EMAIL}?subject=Quero conhecer o Zelda PDV Food`}>solicitar uma demonstração <ArrowUpRight size={18} /></a></div></section>
+        <section className="final-cta dark-section"><div className="page-width final-cta-inner"><div className="cta-sticker">Z/ próximo passo</div><SectionLabel index="Z/09" light>quando o caixa pede mais clareza</SectionLabel><h2>Seu próximo turno pode começar<br /><em>mais organizado.</em></h2><p>Conte para a MC Infra TI como o seu negócio funciona. A gente mostra onde o Zelda PDV Food pode entrar.</p><a className="button button-lime" href={WHATSAPP_URL}>solicitar uma demonstração <ArrowUpRight size={18} /></a></div></section>
       </main>
 
-      <footer className="site-footer"><div className="page-width footer-top"><div className="footer-brand"><a href="#top"><BrandMark size="md" /></a><p>Gestão e vendas para operações food service que precisam de ritmo, clareza e controle.</p><span className="footer-location">MC INFRA TI · BRASIL</span></div><div className="footer-col"><span className="footer-heading">navegação</span><a href="#visao-geral">Visão geral</a><a href="#recursos">Recursos</a><a href="#segmentos">Para quem é</a><a href="#faq">Dúvidas</a></div><div className="footer-col"><span className="footer-heading">contato</span><a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a><a href={`mailto:${CONTACT_EMAIL}?subject=Suporte Zelda PDV Food`}>Falar com suporte</a><span>Atendimento MC Infra TI</span></div><div className="footer-col"><span className="footer-heading">legal</span><a href="/privacidade.html">Política de privacidade</a><a href="/termos.html">Termos de uso</a><a href="/cookiesone.html">Política de cookies</a><a href="/titulares.html">Direitos do titular</a></div></div><div className="page-width footer-bottom"><span>© 2026 MC Infra TI. Todos os direitos reservados.</span><span>ZELDA PDV FOOD / SISTEMA DE GESTÃO E VENDAS</span></div></footer>
+      <footer className="site-footer"><div className="page-width footer-top"><div className="footer-brand"><a href="#top"><BrandMark size="md" /></a><p>Gestão e vendas para operações food service que precisam de ritmo, clareza e controle.</p><span className="footer-location">MC INFRA TI · BRASIL</span></div><div className="footer-col"><span className="footer-heading">navegação</span><a href="#visao-geral">Visão geral</a><a href="#recursos">Recursos</a><a href="#segmentos">Para quem é</a><a href="#faq">Dúvidas</a></div><div className="footer-col"><span className="footer-heading">contato</span><a href={WHATSAPP_URL}>WhatsApp</a><a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a><span>Atendimento MC Infra TI</span></div><div className="footer-col"><span className="footer-heading">legal</span><a href="/privacidade.html">Política de privacidade</a><a href="/termos.html">Termos de uso</a><a href="/cookiesone.html">Política de cookies</a><a href="/titulares.html">Direitos do titular</a></div></div><div className="page-width footer-bottom"><span>© 2026 MC Infra TI. Todos os direitos reservados.</span><span>ZELDA PDV FOOD / SISTEMA DE GESTÃO E VENDAS</span></div></footer>
 
       {cookieVisible && <aside className="cookie-banner" aria-label="Aviso de cookies"><div><span className="mono-label">privacidade em primeiro lugar</span><p>Usamos cookies para melhorar a experiência e entender o uso da página. Consulte a <a href="/privacidade.html">Política de Privacidade</a>.</p></div><button className="cookie-button" type="button" onClick={acceptCookies}>entendi <Check size={16} /></button></aside>}
     </div>
